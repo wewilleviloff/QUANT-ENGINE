@@ -37,7 +37,10 @@ mod tests {
 
     #[test]
     fn calculates_net_expectancy() {
-        assert_eq!(net_expectancy(d("0.55"), d("2"), d("1")).unwrap(), d("0.65"));
+        assert_eq!(
+            net_expectancy(d("0.55"), d("2"), d("1")).unwrap(),
+            d("0.65")
+        );
     }
 
     #[test]
