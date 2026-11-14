@@ -109,7 +109,7 @@ mod tests {
     fn leverage_does_not_increase_risk_budget() {
         let base = SizingInput {
             equity: d("200"),
-            risk_fraction: d("0.005"),
+            risk_fraction: d("0.002"),
             stop_distance_fraction: d("0.02"),
             cost_fraction: d("0.001"),
             max_margin_fraction: d("0.10"),
