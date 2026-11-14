@@ -1,6 +1,6 @@
 //! Minimal operational endpoints. No trading or account mutation endpoints exist yet.
 
-use axum::{routing::get, Json, Router};
+use axum::{Json, Router, routing::get};
 use serde::Serialize;
 
 #[derive(Serialize)]
