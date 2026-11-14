@@ -6,6 +6,7 @@ publish = false
 
 [dependencies]
 anyhow.workspace = true
+axum.workspace = true
 quant-api = { path = "../../crates/quant-api" }
 quant-telemetry = { path = "../../crates/quant-telemetry" }
 tokio.workspace = true
