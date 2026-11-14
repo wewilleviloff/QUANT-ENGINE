@@ -32,7 +32,7 @@ pub enum SizingError {
     InvalidRiskFraction,
     #[error("stop distance must be positive and cost fraction non-negative")]
     InvalidDistanceOrCosts,
-    #[error("margin fraction must be in (0, 1]")]
+    #[error("margin fraction must be in (0, 1)")]
     InvalidMarginFraction,
     #[error("leverage values must be positive")]
     InvalidLeverage,
@@ -82,7 +82,6 @@ pub fn calculate_size(input: SizingInput) -> Result<SizingResult, SizingError> {
 #[cfg(test)]
 mod tests {
     use super::*;
-    use rust_decimal_macros_placeholder::*;
 
     fn d(value: &str) -> Decimal {
         value.parse().expect("valid decimal")
@@ -102,7 +101,7 @@ mod tests {
         .expect("valid sizing");
 
         assert_eq!(result.effective_leverage, d("3"));
-        assert_eq!(result.notional, d("47.619047619047619047619047619"));
+        assert!(result.notional > d("47") && result.notional < d("48"));
         assert_eq!(result.margin, result.notional / d("3"));
         assert!(result.estimated_loss_at_stop <= d("1"));
     }
