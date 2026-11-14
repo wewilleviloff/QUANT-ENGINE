@@ -63,8 +63,7 @@ pub fn calculate_size(input: SizingInput) -> Result<SizingResult, SizingError> {
     let effective_leverage = input.requested_leverage.min(input.max_leverage);
     let loss_fraction = input.stop_distance_fraction + input.cost_fraction;
     let risk_limited_notional = input.equity * input.risk_fraction / loss_fraction;
-    let margin_limited_notional =
-        input.equity * input.max_margin_fraction * effective_leverage;
+    let margin_limited_notional = input.equity * input.max_margin_fraction * effective_leverage;
     let notional = risk_limited_notional.min(margin_limited_notional);
 
     if notional <= zero {
