@@ -1,0 +1,30 @@
+[build-system]
+requires = ["hatchling>=1.26"]
+build-backend = "hatchling.build"
+
+[project]
+name = "quant-lab"
+version = "0.1.0"
+description = "Research-only analytics and validation tools for Quant Engine"
+requires-python = ">=3.12"
+dependencies = []
+
+[project.optional-dependencies]
+research = ["duckdb>=1.1", "numpy>=2.0", "pandas>=2.2", "pyarrow>=18"]
+dev = ["pytest>=8.3", "ruff>=0.8"]
+
+[tool.hatch.build.targets.wheel]
+packages = ["quant-lab/src/quant_lab"]
+
+[tool.pytest.ini_options]
+testpaths = ["quant-lab/tests"]
+pythonpath = ["quant-lab/src"]
+addopts = "-q"
+
+[tool.ruff]
+line-length = 100
+target-version = "py312"
+src = ["quant-lab/src", "quant-lab/tests"]
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "B", "UP"]

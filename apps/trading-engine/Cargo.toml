@@ -1,0 +1,12 @@
+[package]
+name = "trading-engine"
+version.workspace = true
+edition.workspace = true
+publish = false
+
+[dependencies]
+anyhow.workspace = true
+quant-api = { path = "../../crates/quant-api" }
+quant-telemetry = { path = "../../crates/quant-telemetry" }
+tokio.workspace = true
+tracing.workspace = true

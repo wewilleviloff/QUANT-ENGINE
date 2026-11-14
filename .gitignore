@@ -1,0 +1,35 @@
+# Rust
+/target/
+**/*.rs.bk
+
+# Python
+.venv/
+__pycache__/
+.pytest_cache/
+.ruff_cache/
+*.py[cod]
+*.egg-info/
+dist/
+build/
+
+# Local configuration and secrets
+.env
+.env.*
+!.env.example
+secrets/
+*.pem
+*.key
+
+# IDE / OS
+.vscode/*
+!.vscode/extensions.json
+.idea/
+.DS_Store
+Thumbs.db
+
+# Research data and runtime state
+data/
+*.parquet
+*.duckdb
+*.db
+logs/

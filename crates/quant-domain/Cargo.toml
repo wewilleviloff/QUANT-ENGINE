@@ -1,0 +1,11 @@
+[package]
+name = "quant-domain"
+version.workspace = true
+edition.workspace = true
+publish = false
+
+[dependencies]
+chrono.workspace = true
+rust_decimal.workspace = true
+serde.workspace = true
+uuid.workspace = true

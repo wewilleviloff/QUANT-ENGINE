@@ -1,0 +1,19 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://quant-engine.local/contracts/v1/signal.schema.json",
+  "title": "Signal",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["id", "symbol", "side", "strategy_id", "created_at", "entry_reference", "stop_price", "take_profit_price"],
+  "properties": {
+    "id": { "type": "string", "format": "uuid" },
+    "symbol": { "type": "string", "pattern": "^[A-Z0-9]{3,30}$" },
+    "side": { "enum": ["buy", "sell"] },
+    "strategy_id": { "type": "string", "minLength": 1 },
+    "created_at": { "type": "string", "format": "date-time" },
+    "entry_reference": { "type": "string", "pattern": "^[0-9]+(\\.[0-9]+)?$" },
+    "stop_price": { "type": "string", "pattern": "^[0-9]+(\\.[0-9]+)?$" },
+    "take_profit_price": { "type": "string", "pattern": "^[0-9]+(\\.[0-9]+)?$" },
+    "win_probability": { "type": ["string", "null"], "pattern": "^(0(\\.[0-9]+)?|1(\\.0+)?)$" }
+  }
+}
