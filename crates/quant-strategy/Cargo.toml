@@ -3,6 +3,3 @@ name = "quant-strategy"
 version.workspace = true
 edition.workspace = true
 publish = false
-
-[dependencies]
-quant-domain = { path = "../quant-domain" }
